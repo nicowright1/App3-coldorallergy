@@ -27,7 +27,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 -->
 	
    <head> 
-      <title>Hello World</title>  
+      <title>Cold or Allergies</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
@@ -36,12 +36,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
-        var allergy_count = 0;
+        var allergy_count = 0; <!--Keeps count of amount of responses-->
         var cold_count = 0;
 
 
         function allergyAdd(){
-            allergy_count = allergy_count + 1;
+            allergy_count = allergy_count + 1; <!--Got rid of pop up text box-->
 
         }
 
@@ -49,6 +49,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             cold_count = cold_count + 1;
         }
 
+	function Results(){
+		
+	var allergy_percent = (allergy_count/6)*100;
+	var cold_percent = (cold_count/6)*100
+	var resultText = document.getElementById("Results()"); <!--Lets me get results-->
+		
+	resultText.innerHTML = "Probability it is allergies =" = + allergy_percent + "<br> Probabilty it is a cold =" + cold_percent;
+	}
+	
   </script>
 
 
@@ -166,7 +175,26 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		
     	</div>
 </div>
+
+<div class="page" id="seven">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Results</h1>
+	</div>
 	
+    	<div id="content" class="w3-container">
+        	<p>Results</p> 
+		<a href="#eight"  onclick="Results();" class="w3-btn w3-black"> See results </a> <!--created buttons, #eight makes it go to next page-->
+	
+    	</div>
+</div>
+	
+<div class="page" id="eight">
+	<div id="header" class="w3-container w3-flat-carrot">
+	<p id="Results()"></p>
+    <body>
+	</div>
+</div>
+
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
